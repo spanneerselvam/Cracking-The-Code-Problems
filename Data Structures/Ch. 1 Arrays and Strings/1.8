@@ -1,0 +1,19 @@
+#1.8: Assume you have a method isSubstring which checks if one string is a substring of another. Given two strings, w1 and w2, write code
+#to check if w2 is a rotation of w1 using only one call to isSubstring.
+def isSubstring(w1, w2):
+    value = w1.find(w2)
+    if value == 0:
+        return False
+    return True
+
+
+
+def rotation(w1, w2):
+    tempstr = str(w1)+str(w2)
+    if len(w1) == len(w2):
+        value = isSubstring(tempstr, w2)
+        return value
+    
+    return False
+
+print(rotation("waterbottle", "atterbottlew"))
