@@ -1,0 +1,26 @@
+#2-1: Remove duplicates from an unsorted linked list
+
+import Node from linked_list
+import LinkedList from linked_list
+def duplicates(w1):
+    seen = []
+    unique = []
+    repeats = []
+    for ch in w1:
+        if ch not in seen:
+            unique.append(ch)
+        else:
+            repeats.append(ch)
+        seen.append(ch)
+    return(repeats)
+
+a = LinkedList()
+s = "FOLLOW UP"
+my_list = []
+for ch in s:
+    a.append(ch)
+a.display()
+seen = duplicates(s)
+for item in seen:
+    a.delete(item)
+a.display()
