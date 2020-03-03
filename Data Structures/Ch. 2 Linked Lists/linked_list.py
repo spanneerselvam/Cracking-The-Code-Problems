@@ -1,3 +1,5 @@
+#2-4: Write code to partition a linked list around a value x, such that all nodes less than x
+#   come before all nodes greater than or equal to x
 #Building Linked List in Python
 
 class Node:
@@ -94,3 +96,40 @@ class LinkedList:
                 last_node.next = current_node.next
                 return
             current_index += 1
+    def insert_index(self, index, data):
+        new_node = Node(data)
+        if index >= self.length():
+            print("ERROR")
+            return None
+        current_index = 0
+        current_node = self.head
+        while True:
+            last_node = current_node
+            current_node = current_node.next
+            if current_index == index:
+                last_node.next = new_node
+                new_node.next = current_node
+                return
+            current_index += 1
+    def sort(self):
+        elems = []
+        current_node = self.head
+        while current_node.next != None:
+            current_node = current_node.next
+            elems.append(current_node.data)
+            self.delete(current_node.data)
+        elems.sort()
+        for item in elems:
+            self.append(item)
+
+a = LinkedList()
+my_list = [8,4,3,2,1, 5,6,7]
+for item in my_list:
+    a.append(item)
+a.display()
+a.insert_index(2, 0)
+a.insert_index(100, 1)
+a.insert_index(5, 100)
+a.display()
+a.sort()
+a.display()
