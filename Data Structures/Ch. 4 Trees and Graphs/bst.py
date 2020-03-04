@@ -36,11 +36,26 @@ class BST:
             else:
                 self.right.contains(value)
     def printInOrder(self):
+        #Prints left, root, right
         if self.left != None:
             self.left.printInOrder()
         print(self.data)
         if self.right != None:
             self.right.printInOrder()
+    def printPreOrder(self):
+        #Prints Root, Left, Right
+        print(self.data)
+        if self.left != None:
+            self.left.printPreOrder()
+        if self.right != None:
+            self.right.printPreOrder()
+    def printPostOrder(self):
+        #Prints Left, Right, root
+        if self.left != None:
+            self.left.printPostOrder()
+        if self.right != None:
+            self.right.printPostOrder()
+        print(self.data)
 
 a = BST(2)
 a.insert(1)
