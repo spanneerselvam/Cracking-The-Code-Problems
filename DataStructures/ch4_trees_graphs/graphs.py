@@ -1,7 +1,10 @@
-
+"""
+Graph Implementation in Python
+"""
 class Graph:
     def __init__(self):
         self.graph = {}
+      
     def add_edge(self, node, neighbor=None):
         edges = []
         if neighbor != None:
@@ -24,10 +27,15 @@ class Graph:
         return keys
     def show_edges(self, node):
         return node, self.graph[node]
+    
+
 a = Graph()
 a.add_edge("A")
+a.add_edge("D")
 print(a.print_graph())
 a.add_edge("B", "A")
 print(a.print_graph())
 a.add_edge("C", "A")
 print(a.print_graph())
+
+
